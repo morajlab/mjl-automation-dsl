@@ -1,0 +1,3 @@
+[submodule "packages/github-starter-workflows"]
+	path = packages/github-starter-workflows
+	url = https://github.com/actions/starter-workflows.git

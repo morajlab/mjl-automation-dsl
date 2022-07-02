@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Workflow>
+  <Name>CI</Name>
+  <On>
+    <Push>
+      <Branches>
+        <Branch>$default-branch</Branch>
+      </Branches>
+    </Push>
+    <PullRequest>
+      <Branches>
+        <Branch>$default-branch</Branch>
+      </Branches>
+    </PullRequest>
+    <WorkflowDispatch />
+  </On>
+  <Jobs>
+    <Job>
+      <Name>Build</Name>
+      <RunsOn>ubuntu-latest</RunsOn>
+      <Steps>
+        <Step>
+          <Uses>actions/checkout@v3</Uses>
+        </Step>
+        <Step>
+          <Name>Run a one-line script</Name>
+          <Run>echo Hello, world!</Run>
+        </Step>
+        <Step>
+          <Name>Run a multi-line script</Name>
+          <Run>
+            echo Add other actions to build,
+            echo test, and deploy your project.
+          </Run>
+        </Step>
+      </Steps>
+    </Job>
+  </Jobs>
+</Workflow>
