@@ -1,0 +1,35 @@
+{
+  "name": "mjl-automation-dsl",
+  "version": "0.0.1-alpha",
+  "license": "MIT",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/morajlab/mjl-automation-dsl/issues"
+  },
+  "homepage": "https://github.com/morajlab/mjl-automation-dsl#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morajlab/mjl-automation-dsl.git"
+  },
+  "author": {
+    "name": "Morteza Jamali",
+    "email": "mortezajamali4241@gmail.com",
+    "url": "https://moraj.ir"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@nrwl/cli": "14.4.0",
+    "@nrwl/js": "14.4.0",
+    "@nrwl/workspace": "14.4.0",
+    "nx": "14.4.0",
+    "prettier": "^2.6.2",
+    "typescript": "~4.7.2",
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3"
+  },
+  "lint-staged": {
+    "**/*": "prettier -w -u"
+  }
+}
