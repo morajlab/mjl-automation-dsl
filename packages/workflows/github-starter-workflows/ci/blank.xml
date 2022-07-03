@@ -2,19 +2,23 @@
 
 <Workflow>
   <Name>CI</Name>
-  <On>
-    <Push>
+  <Events>
+    <Event>
+      <Name>push</Name>
       <Branches>
         <Branch>$default-branch</Branch>
       </Branches>
-    </Push>
-    <PullRequest>
+    </Event>
+    <Event>
+      <Name>pull_request</Name>
       <Branches>
         <Branch>$default-branch</Branch>
       </Branches>
-    </PullRequest>
-    <WorkflowDispatch />
-  </On>
+    </Event>
+    <Event>
+      <Name>workflow_dispatch</Name>
+    </Event>
+  </Events>
   <Jobs>
     <Job>
       <Name>Build</Name>

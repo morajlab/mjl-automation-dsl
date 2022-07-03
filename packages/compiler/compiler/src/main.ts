@@ -1,7 +1,9 @@
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import { inspect } from 'util';
+import { dump } from 'js-yaml';
 import { XMLParser } from 'fast-xml-parser';
+
 import type { X2jOptions } from 'fast-xml-parser';
 
 const WORKFLOWS_PATH = resolve(
@@ -13,6 +15,10 @@ const WORKFLOWS_PATH = resolve(
   'packages',
   'workflows'
 );
+
+const tokens = {
+  event: 'on',
+};
 
 const parseXMLFile = (path: string) => {
   const parser_options: Partial<X2jOptions> = {
@@ -35,8 +41,14 @@ const parseXMLFile = (path: string) => {
   }
 };
 
-console.log(
-  parseXMLFile(
+const compiler = () => {
+  const yaml_object = {};
+  const object = parseXMLFile(
     resolve(WORKFLOWS_PATH, 'github-starter-workflows', 'ci', 'blank.xml')
-  )
-);
+  );
+
+  (object[0].Workflow as Object[]).forEach((item) => console.log(item));
+};
+
+// console.log(compiler());
+compiler();
